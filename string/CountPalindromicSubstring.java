@@ -1,4 +1,4 @@
-package String;
+package string;
 
 public class CountPalindromicSubstring {
     public static void main(String[] args) {
