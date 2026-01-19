@@ -31,4 +31,32 @@ public class BinaryTreeUtils {
         }
         return root;
     }
+
+    public static void printTree(TreeNode root) {
+        if (root == null) {
+            System.out.println("[]");
+            return;
+        }
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        System.out.print("[");
+        while (!queue.isEmpty()) {
+            TreeNode curr = queue.poll();
+
+            if (curr == null) {
+                System.out.print("null");
+            } else {
+                System.out.print(curr.val);
+                if (curr.left != null) queue.add(curr.left);
+                if (curr.right != null) queue.add(curr.right);
+            }
+
+            if (!queue.isEmpty()) {
+                System.out.print(", ");
+            }
+        }
+        System.out.print("]");
+    }
 }
